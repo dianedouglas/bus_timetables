@@ -1,0 +1,10 @@
+<div class = "container">
+
+<h1>Lines:</h1>
+
+<% Line.all.each do |line| %>
+<p><%= link_to "#{line.name}", line_path(line) %></p>
+<%end %>
+
+<p><%= link_to "New Line", new_line_path, :class=>"btn btn-primary" %></p>
+</div>
