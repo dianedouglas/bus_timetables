@@ -20,15 +20,23 @@ class StationsController <ApplicationController
   end
 
   def edit
+    @station = Station.find(params[:id])
   end
 
   def show
+    @station = Station.find(params[:id])
   end
 
   def update
+    @station = Station.find(params[:id])
+    @station.update(station_params)
+    redirect_to "/stations"
   end
 
   def destroy
+    @station = Station.find(params[:id])
+    @station.destroy
+    redirect_to "/stations"
   end
 
 private
