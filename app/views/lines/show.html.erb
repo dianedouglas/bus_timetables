@@ -1,6 +1,12 @@
 <div class="container">
 <h1><%= @line.name %></h1>
 
+<% @line.stations.each do |station| %>
+<p><%=station.name%></p>
+<% end %>
+
+<br>
+<br>
 <p><%= link_to "Edit", edit_line_path(@line), :class=>"btn btn-primary"%></p>
 
 <p><%= link_to "Delete", line_path(@line), :confirm => "Confirm Delete?", :method => 'delete', :class=>"btn btn-danger" %></p>

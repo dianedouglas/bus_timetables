@@ -1,0 +1,16 @@
+<div class = "container">
+
+<h1>Stops:</h1>
+
+<% Line.all.each do |line| %>
+<br>
+  <% if line.stations.length > 0 %>
+   <strong><p><%=line.name %></p></strong>
+    <%line.stations.each do |station| %>
+      <p><%= station.name %></p>
+    <%end %>
+  <%end %>
+<%end %>
+
+<p><%= link_to "New Stop", new_stop_path, :class=>"btn btn-primary" %></p>
+</div>
