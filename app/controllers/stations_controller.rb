@@ -29,6 +29,12 @@ class StationsController <ApplicationController
 
   def update
     @station = Station.find(params[:id])
+    @station.lines = []
+    params[:station][:line_ids].each do |line_id|
+      if line_id != ""
+        @station.lines << Line.find(line_id)
+      end
+    end
     @station.update(station_params)
     redirect_to "/stations"
   end

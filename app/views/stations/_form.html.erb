@@ -3,5 +3,8 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <div class="form-group">
+    <%= f.collection_check_boxes :line_ids, Line.all, :id, :name %>
+  </div>
   <%= f.submit(:class=>"btn btn-primary")%>
 <% end %>
